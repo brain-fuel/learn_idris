@@ -1,0 +1,8 @@
+package ch24-tts
+version = 0.0.1
+authors = "brainfuel"
+
+-- depends on external CLIs: espeak-ng, whisper.cpp, arecord.
+
+sourcedir = "."
+modules =

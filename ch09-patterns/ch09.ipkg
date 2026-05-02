@@ -1,0 +1,6 @@
+package ch09-patterns
+version = 0.0.1
+authors = "brainfuel"
+
+sourcedir = "."
+modules =

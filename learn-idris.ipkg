@@ -1,0 +1,7 @@
+package learn-idris
+version = 0.0.1
+authors = "brainfuel"
+
+sourcedir = "lib"
+
+modules = Learn.Fixtures

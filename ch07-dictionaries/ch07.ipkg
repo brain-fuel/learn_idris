@@ -1,0 +1,6 @@
+package ch07-dictionaries
+version = 0.0.1
+authors = "brainfuel"
+
+sourcedir = "."
+modules =

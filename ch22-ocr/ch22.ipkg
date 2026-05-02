@@ -1,0 +1,8 @@
+package ch22-ocr
+version = 0.0.1
+authors = "brainfuel"
+
+-- depends on external `tesseract` CLI. Install with `sudo apt install tesseract-ocr`.
+
+sourcedir = "."
+modules =

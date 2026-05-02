@@ -1,0 +1,6 @@
+package ch04-functions
+version = 0.0.1
+authors = "brainfuel"
+
+sourcedir = "."
+modules =

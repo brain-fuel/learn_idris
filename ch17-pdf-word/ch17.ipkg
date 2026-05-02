@@ -1,0 +1,9 @@
+package ch17-pdf-word
+version = 0.0.1
+authors = "brainfuel"
+
+-- depends on external tools: pandoc, poppler-utils (pdftotext).
+-- No pack deps.
+
+sourcedir = "."
+modules =

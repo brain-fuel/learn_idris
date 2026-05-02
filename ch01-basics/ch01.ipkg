@@ -1,0 +1,9 @@
+package ch01-basics
+version = 0.0.1
+authors = "brainfuel"
+
+-- Idris 2 prelude + base are enough for ch01.
+-- No external pack dependencies.
+
+sourcedir = "."
+modules =

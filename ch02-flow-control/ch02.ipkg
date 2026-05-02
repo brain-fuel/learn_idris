@@ -1,0 +1,6 @@
+package ch02-flow-control
+version = 0.0.1
+authors = "brainfuel"
+
+sourcedir = "."
+modules =

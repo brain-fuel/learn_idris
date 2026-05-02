@@ -1,0 +1,11 @@
+package ch18-csv-json-xml
+version = 0.0.1
+authors = "brainfuel"
+
+-- depends on pack packages `parser-tsv`, `json`.
+-- Run `pack install parser-tsv json` first.
+-- Once exercises exist, declare:
+-- depends = parser-tsv, json
+
+sourcedir = "."
+modules =

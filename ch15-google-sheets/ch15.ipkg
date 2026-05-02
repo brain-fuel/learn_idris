@@ -1,0 +1,10 @@
+package ch15-google-sheets
+version = 0.0.1
+authors = "brainfuel"
+
+-- depends on pack packages `http`, `json`. Run `pack install http json` first.
+-- Once exercises exist, declare:
+-- depends = http, json
+
+sourcedir = "."
+modules =

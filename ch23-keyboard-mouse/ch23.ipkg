@@ -1,0 +1,9 @@
+package ch23-keyboard-mouse
+version = 0.0.1
+authors = "brainfuel"
+
+-- depends on external `xdotool` CLI (Linux/WSL2 only).
+-- Install: sudo apt install xdotool
+
+sourcedir = "."
+modules =

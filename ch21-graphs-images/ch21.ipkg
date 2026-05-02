@@ -1,0 +1,6 @@
+package ch21-graphs-images
+version = 0.0.1
+authors = "brainfuel"
+
+sourcedir = "."
+modules =

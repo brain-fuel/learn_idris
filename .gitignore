@@ -5,3 +5,12 @@
 # Idris 1
 *.ibc
 *.o
+
+build/
+*.ttc
+*.ttm
+*.swp
+*.swo
+*~
+.DS_Store
+.pack/

@@ -1,0 +1,6 @@
+package ch11-organizing-files
+version = 0.0.1
+authors = "brainfuel"
+
+sourcedir = "."
+modules =

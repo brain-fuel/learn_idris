@@ -1,0 +1,6 @@
+package ch19-time-scheduling
+version = 0.0.1
+authors = "brainfuel"
+
+sourcedir = "."
+modules =
