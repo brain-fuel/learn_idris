@@ -18,10 +18,10 @@ Tick a chapter when **all four** are true:
 - [ ] **ch06 — Lists**: `List a` vs `Vect n a`, `head'` returning `Maybe`, immutability.
 - [ ] **ch07 — Dictionaries**: `SortedMap`, records, REPL-style state via `partial`.
 - [ ] **ch08 — Strings**: `Data.String`, `pack`/`unpack`, `split` returning `List1`.
-- [ ] ch09 — Pattern matching *(substitute for regex: parser combinators)*
-- [ ] ch10 — Reading & writing files *(`System.File`)*
-- [ ] ch11 — Organizing files *(`System.Directory`, shell out for mv/cp)*
-- [ ] ch12 — Designing CLI programs *(`System.getArgs`, exit codes)*
+- [ ] **ch09 — Pattern matching**: parser combinators built from `Parser a = String -> Maybe (a, String)`; `pchar`/`pany`/`pseq`/`palt`/`pcount`/`many`.
+- [ ] **ch10 — Reading & writing files**: `System.File`, `Either FileError` with the `Right/Left` with-pattern, `clockTime UTC`.
+- [ ] **ch11 — Organizing files**: `System.Directory` (no `isDirectory`), classification by extension, shell-out via `System.system`.
+- [ ] **ch12 — Designing CLI programs**: `getArgs`, `exitWith`, hand-rolled flag parser, stdin-flag workaround for `--exec` mode.
 - [ ] ch13 — Web scraping *(pack `http` + parser-combinator HTML matcher)*
 - [ ] ch14 — Spreadsheets *(substitute: TSV via pack `parser-tsv`)*
 - [ ] ch15 — Google Sheets *(REST via pack `http` + `json`)*
