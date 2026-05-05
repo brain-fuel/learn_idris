@@ -1,0 +1,5 @@
+add Alice alice@x.com
+add Bob bob@y.com
+lookup Alice
+list
+quit
