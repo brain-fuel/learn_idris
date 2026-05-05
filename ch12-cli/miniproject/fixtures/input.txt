@@ -1,0 +1,1 @@
+--in ch12-cli/miniproject/fixtures/tiny.ppm --out /tmp/learn_idris_ch12_ic_out.txt
