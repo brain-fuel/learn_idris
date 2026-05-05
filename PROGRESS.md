@@ -11,13 +11,13 @@ Tick a chapter when **all four** are true:
 
 - [ ] **ch00 — Hello**: open a terminal, edit a file, run an Idris program.
 - [ ] **ch01 — Basics**: `putStrLn`, numbers, strings, `let` bindings, `getLine`.
-- [ ] ch02 — Flow control *(not yet authored — `if/then/else`, guards, `case`)*
-- [ ] ch03 — Loops *(recursion, `for_`, `traverse_`, ranges, folds)*
-- [ ] ch04 — Functions *(total functions, default args via records, currying)*
-- [ ] ch05 — Debugging *(`?holes`, type-driven dev, REPL, `printLn`)*
-- [ ] ch06 — Lists *(`List a` vs `Vect n a`, immutability)*
-- [ ] ch07 — Dictionaries / structuring data *(`SortedMap`, records)*
-- [ ] ch08 — Strings & text editing *(`Data.String`, `pack`/`unpack`)*
+- [ ] **ch02 — Flow control**: `if/then/else` (expression), `case ... of`, guards via Bool tuples.
+- [ ] **ch03 — Loops**: `for_`, `traverse_`, ranges, structural recursion, `foldl`.
+- [ ] **ch04 — Functions**: type signatures, currying, records as default args, custom data types.
+- [ ] **ch05 — Debugging**: `?holes`, type-driven dev, REPL, `printLn`-as-trace.
+- [ ] **ch06 — Lists**: `List a` vs `Vect n a`, `head'` returning `Maybe`, immutability.
+- [ ] **ch07 — Dictionaries**: `SortedMap`, records, REPL-style state via `partial`.
+- [ ] **ch08 — Strings**: `Data.String`, `pack`/`unpack`, `split` returning `List1`.
 - [ ] ch09 — Pattern matching *(substitute for regex: parser combinators)*
 - [ ] ch10 — Reading & writing files *(`System.File`)*
 - [ ] ch11 — Organizing files *(`System.Directory`, shell out for mv/cp)*
