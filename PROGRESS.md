@@ -30,7 +30,18 @@ Tick a chapter when **all four** are true:
 - [ ] **ch18 — CSV / JSON / XML**: hand-rolled CSV + XML, contrib `Language.JSON` for serialization.
 - [ ] **ch19 — Time & scheduling**: `System.Clock`, `sleep`, journal-of-timestamps `clockReport`.
 - [ ] **ch20 — Email**: dry-run Mailgun POST body, URL-encoding, pack `http` import.
-- [ ] ch21 — Graphs & images *(write PPM by hand; pure Idris)*
-- [ ] ch22 — OCR *(shell out to `tesseract`)*
-- [ ] ch23 — Keyboard / mouse *(shell out to `xdotool`, Linux/WSL2 only)*
-- [ ] ch24 — TTS *(shell out to `espeak-ng`)*
+- [ ] **ch21 — Graphs & images**: hand-write the PPM-P3 plain-text image format, render a bar chart from a TSV. Pure Idris.
+- [ ] **ch22 — OCR**: shell out to `tesseract`, read the output `.txt`, parse a receipt total via string helpers.
+- [ ] **ch23 — Keyboard / mouse**: shell out to `xdotool` for mouse moves and queries; tests run under `xvfb-run` so the real X session is undisturbed.
+- [ ] **ch24 — TTS**: shell out to `espeak-ng -w out.wav`, validate the resulting WAV by reading the RIFF magic.
+
+---
+
+## Curriculum complete
+
+All 24 chapters are authored. After this, the learner has:
+
+- Worked through every Automate-the-Boring-Stuff topic in Idris 2.
+- Built 24 miniprojects, each with red→green test gradient.
+- Met totality (`%default total` + per-function `covering`/`partial`), dependent types, parser combinators, the pack ecosystem (`http`), contrib `Language.JSON`, and shell-out as a real skill.
+- A clean `make typecheck-all` and per-chapter `make verify-chNN` workflow.
