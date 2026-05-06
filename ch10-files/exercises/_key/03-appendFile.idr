@@ -2,11 +2,12 @@ module Main
 
 import System.File
 
-%default covering
+%default total
 
 path : String
 path = "/tmp/learn_idris_ch10_ex03.txt"
 
+covering
 main : IO ()
 main = do
   Right () <- writeFile path ""

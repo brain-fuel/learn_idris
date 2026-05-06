@@ -4,7 +4,7 @@ import System.File
 import System.Clock
 import Data.String
 
-%default covering
+%default total
 
 journalPath : String
 journalPath = "/tmp/learn_idris_ch10_journal.txt"
@@ -12,6 +12,7 @@ journalPath = "/tmp/learn_idris_ch10_journal.txt"
 now : IO Integer
 now = map seconds (clockTime UTC)
 
+covering
 addEntry : String -> IO ()
 addEntry text = do
   t <- now
@@ -20,12 +21,14 @@ addEntry text = do
     | Left e => putStrLn ("error: " ++ show e)
   putStrLn ("entry added: " ++ text)
 
+covering
 showJournal : IO ()
 showJournal = do
   Right contents <- readFile journalPath
     | Left _ => putStrLn "(journal empty or missing)"
   putStr contents
 
+covering
 clearJournal : IO ()
 clearJournal = do
   Right () <- writeFile journalPath ""

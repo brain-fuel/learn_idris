@@ -2,10 +2,6 @@
 
 **You'll learn:** how to read command-line arguments with `getArgs`, design a tiny argument record, parse it, and exit with the right code. Idris's stdlib doesn't ship a `argparse`-like helper — you write the parser yourself, which is short and explicit.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept                  | Idris form                                                  |
@@ -14,7 +10,9 @@ Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter templ
 | `argparse.ArgumentParser()`     | hand-roll: a record, then a parsing function                |
 | `sys.exit(1)`                   | `exitWith (ExitFailure 1)`                                  |
 | `sys.stdin.read()`              | `getContents` or `getLine` in a loop                        |
-| `print(..., file=sys.stderr)`   | `eprintLn`                                                  |
+| `print(..., file=sys.stderr)`   | `ignore $ fPutStrLn stderr "..."` (from `System.File.Virtual`) |
+
+> **`getArgs` caveat:** when running via `idris2 --exec main file.idr`, `getArgs` returns idris2's own argv, not your program's args. The miniproject sidesteps this by reading flags from stdin as a single line; the exercises still teach `getArgs` so you see the real signature.
 
 Headline shift: write your own arg parser. It's 30 lines and matches your problem exactly.
 

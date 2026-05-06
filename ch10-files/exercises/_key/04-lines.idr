@@ -3,8 +3,9 @@ module Main
 import System.File
 import Data.String
 
-%default covering
+%default total
 
+covering
 main : IO ()
 main = do
   Right s <- readFile "ch10-files/exercises/fixtures/three-lines.txt"

@@ -3,7 +3,7 @@ module Main
 import System.File
 import Data.String
 
-%default covering
+%default total
 
 -- New idea: combine file IO with `lines : String -> List String` (which
 -- you met in ch08). Together they let you process a file line-by-line.
@@ -18,6 +18,7 @@ import Data.String
 --       Hint: `for_ (zip [the Nat 1..length ls] ls) $ \(i, l) =>
 --               putStrLn (show i ++ ": " ++ l)`.
 
+covering
 main : IO ()
 main = do
   Right s <- readFile "ch10-files/exercises/fixtures/three-lines.txt"

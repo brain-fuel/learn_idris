@@ -2,8 +2,9 @@ module Main
 
 import System.File
 
-%default covering
+%default total
 
+covering
 main : IO ()
 main = do
   result <- readFile "/no/such/path/at/all"

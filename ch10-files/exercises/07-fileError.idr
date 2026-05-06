@@ -2,7 +2,7 @@ module Main
 
 import System.File
 
-%default covering
+%default total
 
 -- New idea: when a file op fails, the `Left` branch carries a
 -- `FileError`. `FileError` has a `Show` instance, so you can format it
@@ -17,6 +17,7 @@ import System.File
 --         - prints `error: <show err>` on `Left`.
 --       Expected on this machine: `error: File Not Found`.
 
+covering
 main : IO ()
 main = do
   _ <- readFile "/no/such/path/at/all"
