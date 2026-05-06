@@ -115,6 +115,37 @@ Some Wave 2+ chapters shell out to external tools instead of pure-Idris librarie
 
 Install on demand when the chapter calls for it; not needed before ch13.
 
+## 5a. Per-chapter pack workspaces (ch13+)
+
+Starting at ch13 some chapters depend on pack ecosystem packages (`http` for ch13/ch15/ch20 in Wave 4). Rather than installing those globally with `pack install <pkg>`, this curriculum pins each chapter's deps in a per-chapter `pack.toml`:
+
+```
+ch13-web-scraping/pack.toml
+ch15-google-sheets/pack.toml
+ch20-email/pack.toml
+```
+
+Each is one stanza:
+
+```toml
+[pack]
+collection = "nightly-260327"
+```
+
+That collection pin (and only that) makes builds reproducible across machines: every learner who runs `pack switch nightly-260327` once gets the same `http` commit, the same `idris2`, the same scheme backend.
+
+After cloning the repo, run **once**:
+
+```bash
+make bootstrap-pack
+```
+
+This walks every `chNN-*/pack.toml` and runs `pack install-deps chNN.ipkg` inside the chapter directory. First run on a cold cache builds `http` (and its transitive deps like `tls`, `base64`) — takes a few minutes. Subsequent runs are no-ops.
+
+`make verify-chNN` re-runs `pack install-deps` automatically when a `pack.toml` is present, and exports `IDRIS2_PACKAGE_PATH=$(pack package-path)` so `idris2 --check` resolves the chapter's pack imports. No manual `pack` invocation needed during normal use.
+
+Why per-chapter (not a single root `pack.toml`): keeps each chapter self-contained — copying `chNN-*/` into a different repo or sharing it as a standalone exercise still works without dragging in unrelated deps.
+
 ## 6. Reuse with another learner
 
 Clone a fresh copy of this repo. Each learner gets their own clone. Curriculum content stays on `main`; their work lives in their clone.

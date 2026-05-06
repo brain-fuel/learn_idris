@@ -2,9 +2,8 @@ package ch14-spreadsheets
 version = 0.0.1
 authors = "brainfuel"
 
--- depends on pack package `parser-tsv`. Run `pack install parser-tsv` first.
--- Once exercises exist, declare:
--- depends = parser-tsv
+-- TSV parser is hand-rolled in this chapter (the lesson). No pack deps.
+depends = base
 
 sourcedir = "."
 modules =

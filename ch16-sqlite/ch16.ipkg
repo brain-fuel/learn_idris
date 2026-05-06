@@ -2,10 +2,9 @@ package ch16-sqlite
 version = 0.0.1
 authors = "brainfuel"
 
--- depends on pack package `parser-tsv` + external `sqlite3` CLI binary.
--- Run `pack install parser-tsv` and `sudo apt install sqlite3`.
--- Once exercises exist, declare:
--- depends = parser-tsv
+-- TSV parser is hand-rolled (chapter parses .mode tabs output from sqlite3).
+-- External dep: `sqlite3` CLI binary (see SETUP.md §5).
+depends = base
 
 sourcedir = "."
 modules =

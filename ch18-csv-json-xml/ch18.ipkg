@@ -2,10 +2,9 @@ package ch18-csv-json-xml
 version = 0.0.1
 authors = "brainfuel"
 
--- depends on pack packages `parser-tsv`, `json`.
--- Run `pack install parser-tsv json` first.
--- Once exercises exist, declare:
--- depends = parser-tsv, json
+-- CSV + XML parsers are hand-rolled in this chapter. JSON uses contrib
+-- `Language.JSON` (auto-shipped with idris2). No pack deps.
+depends = base
 
 sourcedir = "."
 modules =

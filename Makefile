@@ -4,6 +4,7 @@ IDRIS2 ?= idris2
 help:
 	@echo "Targets:"
 	@echo "  make verify-chNN    - typecheck exercises + _key, run miniproject test for chapter NN"
+	@echo "  make bootstrap-pack - pack install-deps for every chapter with a pack.toml"
 	@echo "  make typecheck-all  - typecheck every .idr in the workspace"
 	@echo "  make compile-all    - build every miniproject _key/ to a runnable executable"
 	@echo "  make clean          - remove build/ caches"
@@ -13,6 +14,12 @@ verify-ch%:
 	@chdir=$$(ls -d ch$**/ 2>/dev/null | head -n1); \
 	  if [ -z "$$chdir" ]; then echo "No directory matching ch$**/"; exit 1; fi; \
 	  chdir=$${chdir%/}; \
+	  if [ -f "$$chdir/pack.toml" ]; then \
+	    chipkg=$$(ls $$chdir/*.ipkg | head -n1); \
+	    echo "==> pack install-deps $$chipkg (project-local pack.toml)"; \
+	    (cd "$$chdir" && pack --no-prompt install-deps "$$(basename $$chipkg)") >/dev/null || { echo "FAIL: pack install-deps $$chipkg"; exit 1; }; \
+	    export IDRIS2_PACKAGE_PATH="$$(cd $$chdir && pack package-path)"; \
+	  fi; \
 	  echo "==> typecheck $$chdir/exercises"; \
 	  found=0; \
 	  for f in $$chdir/exercises/*.idr $$chdir/exercises/_key/*.idr; do \
@@ -40,6 +47,17 @@ verify-ch%:
 	    done; \
 	  fi; \
 	  echo "OK $$chdir"
+
+.PHONY: bootstrap-pack
+bootstrap-pack:
+	@for d in ch*/; do \
+	  if [ -f "$$d/pack.toml" ]; then \
+	    chipkg=$$(ls $$d/*.ipkg | head -n1); \
+	    echo "==> pack install-deps $$chipkg"; \
+	    (cd "$$d" && pack --no-prompt install-deps "$$(basename $$chipkg)") || exit 1; \
+	  fi; \
+	done; \
+	echo "OK pack bootstrap"
 
 .PHONY: typecheck-all
 typecheck-all:

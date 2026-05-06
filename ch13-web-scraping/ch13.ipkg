@@ -2,9 +2,7 @@ package ch13-web-scraping
 version = 0.0.1
 authors = "brainfuel"
 
--- depends on pack package `http`. Run `pack install http` first.
--- Once exercises exist, declare:
--- depends = http
+depends = http
 
 sourcedir = "."
 modules =
