@@ -103,17 +103,34 @@ vim.filetype.add({
 
 Verify with `:LspInfo` on a `.idr` buffer — it should show `idris2_lsp` attached.
 
-## 5. (Optional) tools used by later chapters
+## 5. External tools used by later chapters
 
-Some Wave 2+ chapters shell out to external tools instead of pure-Idris libraries (the pack ecosystem doesn't yet cover them):
+Some chapters shell out to external tools instead of pure-Idris libraries (the pack ecosystem doesn't yet cover them):
 
 - `sqlite3` (ch16) — `sudo apt install sqlite3`
 - `pandoc` (ch17) — `sudo apt install pandoc`
+- `imagemagick` (ch21 PPM→PNG conversion, ch23 screenshots) — `sudo apt install imagemagick`
 - `tesseract-ocr` (ch22) — `sudo apt install tesseract-ocr`
-- `xdotool` (ch23, Linux only) — `sudo apt install xdotool`
+- `xdotool` (ch23, Linux/WSLg only) — `sudo apt install xdotool`
 - `espeak-ng` (ch24) — `sudo apt install espeak-ng`
 
-Install on demand when the chapter calls for it; not needed before ch13.
+For the **Wave 5 capstone (ch21–ch24)** install all four in one go before working through those chapters:
+
+```bash
+sudo apt install -y imagemagick tesseract-ocr xdotool espeak-ng
+```
+
+Verify each resolves and the round-trip works:
+
+```bash
+which tesseract xdotool espeak-ng convert            # all should print /usr/bin/...
+xdotool getmouselocation                             # X server reachable (WSLg ok)
+espeak-ng -w /tmp/_smoke.wav "hi" && head -c 4 /tmp/_smoke.wav  # prints "RIFF"
+```
+
+`xdotool` needs a working X display. On WSL2, recent versions ship WSLg, which exposes a working `$DISPLAY=:0` automatically. If `xdotool getmouselocation` errors out with a missing display, either upgrade WSL or run ch23 tests under `xvfb-run` (`sudo apt install xvfb`).
+
+Earlier-wave tools (`sqlite3`, `pandoc`) install on demand when those chapters come up.
 
 ## 5a. Per-chapter pack workspaces (ch13+)
 
