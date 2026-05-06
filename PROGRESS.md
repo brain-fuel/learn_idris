@@ -22,14 +22,14 @@ Tick a chapter when **all four** are true:
 - [ ] **ch10 — Reading & writing files**: `System.File`, `Either FileError` with the `Right/Left` with-pattern, `clockTime UTC`.
 - [ ] **ch11 — Organizing files**: `System.Directory` (no `isDirectory`), classification by extension, shell-out via `System.system`.
 - [ ] **ch12 — Designing CLI programs**: `getArgs`, `exitWith`, hand-rolled flag parser, stdin-flag workaround for `--exec` mode.
-- [ ] ch13 — Web scraping *(pack `http` + parser-combinator HTML matcher)*
-- [ ] ch14 — Spreadsheets *(substitute: TSV via pack `parser-tsv`)*
-- [ ] ch15 — Google Sheets *(REST via pack `http` + `json`)*
-- [ ] ch16 — SQLite *(shell out to `sqlite3` binary)*
-- [ ] ch17 — PDF / Word *(generate Markdown + shell out to `pandoc`)*
-- [ ] ch18 — CSV / JSON / XML *(pack `parser-tsv`, `json`, hand-written XML)*
-- [ ] ch19 — Time / scheduling *(`System.Clock`, `System.Run`)*
-- [ ] ch20 — Email / notifications *(REST POST via pack `http`)*
+- [ ] **ch13 — Web scraping**: parser combinators applied to HTML; `Network.HTTP.Client` from pack `http`; deterministic test via local fixture.
+- [ ] **ch14 — Spreadsheets**: hand-rolled TSV parser, `SortedMap` aggregation, two-decimal formatting.
+- [ ] **ch15 — Google Sheets**: dry-run Sheets v4 PUT body via contrib `Language.JSON` + pack `http` types.
+- [ ] **ch16 — SQLite**: shell out to `sqlite3 -separator $'\t'`, parse TSV result, REPL with `partial`.
+- [ ] **ch17 — PDF / Word**: generate Markdown from a TSV, shell out to `pandoc`, check the artifact.
+- [ ] **ch18 — CSV / JSON / XML**: hand-rolled CSV + XML, contrib `Language.JSON` for serialization.
+- [ ] **ch19 — Time & scheduling**: `System.Clock`, `sleep`, journal-of-timestamps `clockReport`.
+- [ ] **ch20 — Email**: dry-run Mailgun POST body, URL-encoding, pack `http` import.
 - [ ] ch21 — Graphs & images *(write PPM by hand; pure Idris)*
 - [ ] ch22 — OCR *(shell out to `tesseract`)*
 - [ ] ch23 — Keyboard / mouse *(shell out to `xdotool`, Linux/WSL2 only)*
