@@ -2,10 +2,6 @@
 
 **You'll learn:** Idris has two list-like types. `List a` is a list of any length. `Vect n a` is a list of *exactly `n`* elements — and `n` is a **type-level value**, so the compiler can prove indexing is safe at compile time. This is the punchline that distinguishes Idris from most other languages.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept             | Idris form                                                |

@@ -2,10 +2,6 @@
 
 **You'll learn:** Idris's debugging tools are *very* different from Python's. Instead of inserting `print(x)` statements, you insert `?holes` — a hole is a placeholder the typechecker fills in for you, telling you exactly what type of value is expected at that spot. Combined with the REPL, this is "type-driven development."
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python tool                  | Idris equivalent                                         |

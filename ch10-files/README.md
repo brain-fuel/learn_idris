@@ -2,10 +2,6 @@
 
 **You'll learn:** how to read a file with `readFile`, write one with `writeFile`, and chunk large files line-by-line. File operations live in `IO` and return `Either FileError String` because they can fail (file missing, no permission).
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept                          | Idris form                                                 |

@@ -2,10 +2,6 @@
 
 **You'll learn:** how to do something *many times* in a language with no `for i = 0; i++`. Idris uses recursion for general looping; for typical "do this for each item" cases, `for_` and `traverse_` from `Data.List` are the workhorses.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept                | Idris form                                       |

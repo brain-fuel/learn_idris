@@ -2,10 +2,6 @@
 
 **You'll learn:** Python's `re` module has no direct counterpart in the Idris 2 ecosystem. Instead, Idris culture leans on **parser combinators** — small, composable functions that match input. They're more verbose for one-off "find a phone number" tasks but type-safe and total. This chapter teaches a small parser combinator library and uses it the way Python uses regex.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 Build (or import from `parser-json` style) a tiny parser combinator core:

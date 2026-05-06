@@ -2,10 +2,6 @@
 
 **You'll learn:** how to make a program *decide*. Idris's tools for branching are `if/then/else` (an *expression*, not a statement — it must always have an `else`), pattern-matching with `case ... of`, and guards on function clauses.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template (README + ten exercises + miniproject + test driver). Once exercises exist, run `make verify-ch02` from the repo root.
-
 ## Idris realization
 
 | Python concept            | Idris form                                                |

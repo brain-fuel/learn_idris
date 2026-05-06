@@ -2,10 +2,6 @@
 
 **You'll learn:** how to walk directory trees, copy/move/rename files, and shell out for operations that aren't built into Idris's `System.Directory`. This is the chapter that makes Python's `shutil` honest — most heavy lifting becomes `system "mv ..."` calls.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python `shutil` / `os`              | Idris equivalent                                     |

@@ -2,10 +2,6 @@
 
 **You'll learn:** Idris's `String` type plus the helpers in `Data.String` for slicing, splitting, joining, case conversion. Idris keeps `String` and `List Char` separate — you bridge with `pack` and `unpack`.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept              | Idris form                                                   |

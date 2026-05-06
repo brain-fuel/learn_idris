@@ -2,10 +2,6 @@
 
 **You'll learn:** how to define your own functions in Idris. Every top-level function gets a type signature on its own line (`name : Type`), then the equation(s) (`name args = expr`). Functions are total by default in this curriculum: the compiler proves they terminate and cover every case.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept                          | Idris form                                                 |

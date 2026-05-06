@@ -2,10 +2,6 @@
 
 **You'll learn:** how to associate keys with values (`SortedMap` from `Data.SortedMap`) and how to define your own data shapes with records. Records are the Idris answer to "I want a struct" — a named bundle of fields, each with a type.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept                    | Idris form                                                   |
