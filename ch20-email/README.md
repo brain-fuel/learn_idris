@@ -2,10 +2,6 @@
 
 **You'll learn:** sending email is **not** "speak SMTP from scratch" anymore — that's a maze of TLS, auth, anti-spam. Use a transactional-email REST API (Mailgun, Postmark, SendGrid). It's an HTTP POST with a JSON body. Same shape applies to SMS (Twilio) and push (Pushover).
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept                       | Idris form                                       |
@@ -24,6 +20,6 @@ Auth: every provider gives you an API key. Read it from `~/.config/learn_idris/<
 
 Install: `pack install http json`.
 
-## Miniproject (when authored)
+## Miniproject
 
 Daily-digest mailer: take a TSV of yesterday's events, format as Markdown, render to HTML, POST via Mailgun.

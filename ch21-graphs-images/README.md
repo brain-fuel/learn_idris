@@ -2,10 +2,6 @@
 
 **You'll learn:** Idris has no `matplotlib`, no `Pillow`. The substitute: **PPM (Portable Pixmap)** — a plain-text image format you can write byte-by-byte. Pure Idris, zero dependencies, and surprisingly capable for bar charts and simple graphics.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 PPM-P3 format (ASCII):
@@ -32,6 +28,6 @@ Optional: `imagemagick` for `.ppm` → `.png` conversion. `sudo apt install imag
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 Bar-chart-from-TSV: read a TSV of `(label, value)` rows, render as a labeled bar chart `.ppm`, optionally convert to `.png` via ImageMagick.

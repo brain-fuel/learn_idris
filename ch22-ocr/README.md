@@ -2,10 +2,6 @@
 
 **You'll learn:** OCR is a deep ML problem. Don't reinvent — `tesseract` is the standard open-source engine, and you call it from Idris by shelling out: `tesseract input.png output.txt -l eng`. Then read the resulting text file.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 ```idris
@@ -29,6 +25,6 @@ ocr p = do
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 Receipt scanner: take a folder of receipt photos, OCR each one, extract the total via parser combinators, write a TSV of `(filename, total)` rows.

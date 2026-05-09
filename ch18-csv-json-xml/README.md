@@ -2,10 +2,6 @@
 
 **You'll learn:** three parsers / serializers. CSV via `parser-tsv` (with comma instead of tab). JSON via the pack `json` package. XML hand-written with parser combinators (no XML pack package exists).
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 ### CSV
@@ -30,6 +26,6 @@ The pack ecosystem has no XML package as of nightly-260327. Build a tiny XML par
 
 Install: `pack install parser-tsv json`.
 
-## Miniproject (when authored)
+## Miniproject
 
 A multi-format converter: read a CSV of `name,email,age`, emit JSON and XML versions of the same data. Practice all three in one go.

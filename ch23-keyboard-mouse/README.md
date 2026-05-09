@@ -4,10 +4,6 @@
 
 This chapter is **Linux-only** (or macOS with `cliclick`, similar API). Native Windows GUI automation is out of scope.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python `pyautogui`               | Idris (shell to `xdotool`)                       |
@@ -27,7 +23,7 @@ Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter templ
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 Auto-clicker that solves a small "click the buttons in this order" UI test. Runs against a known window title.
 

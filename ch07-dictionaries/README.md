@@ -20,6 +20,6 @@ Headline shift: there is no `KeyError`. Lookup returns `Maybe a`, and the compil
 
 None — `Data.SortedMap` is in `base`.
 
-## Miniproject (when authored)
+## Miniproject
 
 Build a simple address book backed by a `SortedMap String Contact` where `Contact` is a record. Support add, remove, lookup-by-name, list-all.

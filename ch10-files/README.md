@@ -18,6 +18,6 @@ Headline shift: file ops can fail, and Idris makes you handle the error. No sile
 
 None — `System.File` is in `base`.
 
-## Miniproject (when authored)
+## Miniproject
 
 A daily-journal helper: `journal.idr add "what I did today"` appends to `journal.txt` with a timestamp; `journal.idr show` prints the last 7 days.

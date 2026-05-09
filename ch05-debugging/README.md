@@ -18,6 +18,6 @@ Headline shift: most "debugging" in Idris is **before** you run the program. A h
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 Take a buggy small program, replace the bug-line with `?fix`, query its type in the REPL, write the right expression, and ship.

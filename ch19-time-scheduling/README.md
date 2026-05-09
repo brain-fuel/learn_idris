@@ -2,10 +2,6 @@
 
 **You'll learn:** `System.Clock` for wall-clock and monotonic time, `sleep` for waiting, `system` for scheduling via cron. Idris has no `datetime` library yet — we use clock primitives plus shell-out to `date`/`cal` for human-readable formatting.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept                      | Idris form                                            |
@@ -25,6 +21,6 @@ Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter templ
 
 None — `System.Clock`, `System.Concurrency`, `System` are in `base`.
 
-## Miniproject (when authored)
+## Miniproject
 
 A pomodoro timer: 25 min work, 5 min break, repeat 4× then 15 min long break. Uses `System.Clock` for timing, `system "notify-send ..."` for desktop notifications.

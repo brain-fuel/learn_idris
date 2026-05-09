@@ -20,6 +20,6 @@ Headline punchline: `Vect n a` makes off-by-one errors compile errors. `index 5 
 
 None — `Data.List` and `Data.Vect` are in `base`.
 
-## Miniproject (when authored)
+## Miniproject
 
 Take a CSV-like list of student scores and produce: average, top three, bottom three, count of passing scores. Build it with `List`, then re-build it with `Vect` and notice which off-by-one mistakes the compiler caught.

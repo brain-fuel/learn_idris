@@ -19,6 +19,6 @@ Headline shift: a Python `while` loop is recursion in Idris — write a small he
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 Print FizzBuzz from 1 to 100, but do it three different ways (recursion, `for_` over a range, list comprehension via `map`).

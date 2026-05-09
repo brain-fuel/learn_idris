@@ -19,6 +19,6 @@ Headline shift: sometimes the right answer is shell-out. Idris doesn't pretend t
 
 None — `System.Directory`, `System.File`, and `System.system` are in `base`.
 
-## Miniproject (when authored)
+## Miniproject
 
 Photo organizer: walk a directory of mixed `.jpg`, `.heic`, `.txt`, `.mov` files; move each into a typed subfolder (`images/`, `video/`, `notes/`); skip files already organized.

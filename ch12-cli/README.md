@@ -20,6 +20,6 @@ Headline shift: write your own arg parser. It's 30 lines and matches your proble
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 Build a `ic` (image-converter) tool: `ic --in foo.ppm --out foo.txt --invert` reads a PPM, optionally inverts pixel intensities, writes ASCII art. Practices arg parsing, file I/O, exit codes.

@@ -2,10 +2,6 @@
 
 **You'll learn:** TTS is another shell-out chapter. `espeak-ng` is a small, free, on-device TTS engine — give it text, it speaks it through the speakers. Speech-to-text (the opposite direction) uses `whisper.cpp` for local inference; both are pure subprocess invocations from Idris.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template. This is the curriculum capstone.
-
 ## Idris realization
 
 ```idris
@@ -27,7 +23,7 @@ For STT, save mic audio (`arecord -d 5 input.wav`), transcribe (`whisper-cli -f 
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 A read-aloud reminder bot: `remind in 30m "stand up"` schedules a notification at the right time, then speaks the message via `espeak-ng`.
 

@@ -22,6 +22,6 @@ Headline shift: a `String` is opaque — to walk character by character, `unpack
 
 None — `Data.String` is in `base`.
 
-## Miniproject (when authored)
+## Miniproject
 
 Take a paragraph of text and emit a histogram of word counts, ignoring case + punctuation. Outputs sorted descending.

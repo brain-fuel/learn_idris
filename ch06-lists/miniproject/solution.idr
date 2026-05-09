@@ -21,7 +21,7 @@ import Data.Vect
 --   cat ch06-lists/miniproject/fixtures/input.txt \
 --     | idris2 --no-banner --exec main ch06-lists/miniproject/solution.idr
 --
--- TODO 1: replace the five `FIXME` placeholders so `scores` is built
+-- TODO 1: replace the five `0`s so `scores` is built
 --         from the five values you read in (`s1`..`s5`).
 -- TODO 2: replace each `FIXME` in the `let` lines with a real
 --         expression. Hints:

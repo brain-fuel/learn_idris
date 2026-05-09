@@ -19,6 +19,6 @@ Headline shift: every function has a type. The signature is your contract; the c
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 Build a tiny calculator: parse a line like `12 + 7` and print the result. Practices defining a small AST, pattern-matching on it, and recursive evaluation.

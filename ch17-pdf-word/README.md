@@ -2,10 +2,6 @@
 
 **You'll learn:** there is no `python-docx` or `PyPDF2` in the Idris ecosystem. The substitute is **generate Markdown** in pure Idris, then **shell out to `pandoc`** to convert to PDF, DOCX, HTML, or anything else pandoc supports. This is also how a lot of professional tooling works — Markdown is the lingua franca, pandoc is the multi-tool.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python concept                         | Idris substitute                                   |
@@ -24,6 +20,6 @@ Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter templ
 
 None.
 
-## Miniproject (when authored)
+## Miniproject
 
 Invoice generator: take a TSV of line items, emit `invoice.md`, then run pandoc to produce `invoice.pdf`.

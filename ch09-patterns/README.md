@@ -19,6 +19,6 @@ Headline shift: a parser is **a function** that takes a string and returns eithe
 
 None for the hand-rolled core; later exercises may pull in `parser-json` or `parser-toml` patterns for inspiration.
 
-## Miniproject (when authored)
+## Miniproject
 
 Phonebook scraper: given a free-form list of contacts in a text file, extract every phone number that matches the US format `\d{3}-\d{3}-\d{4}`.

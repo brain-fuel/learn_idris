@@ -2,10 +2,6 @@
 
 **You'll learn:** the Idris pack ecosystem has a Postgres binding (`pg`) but no SQLite binding yet. This chapter substitutes by **shelling out to the `sqlite3` CLI**: `system "sqlite3 db.sqlite '<query>'"`. Output comes back as TSV; parse it with the same `parser-tsv` from ch14.
 
-## Status
-
-Not yet authored. See [`../ch01-basics/`](../ch01-basics/) for the chapter template.
-
 ## Idris realization
 
 | Python `sqlite3` concept              | Idris form                                            |
@@ -25,6 +21,6 @@ This is more verbose than a native binding, but: it works today, has zero pack d
 
 - `parser-tsv` — to parse `sqlite3 -separator '\t'` output.
 
-## Miniproject (when authored)
+## Miniproject
 
 Tiny task tracker: `task add "do laundry"`, `task list`, `task done 3` — backed by a `tasks.sqlite` file with a single `tasks` table.

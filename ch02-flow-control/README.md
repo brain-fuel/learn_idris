@@ -18,6 +18,6 @@ Headline difference: `if` in Idris is an **expression** that returns a value, so
 
 None — `prelude` and `base` are enough.
 
-## Miniproject (when authored)
+## Miniproject
 
 A small command-line guessing game: pick a number 1–10, ask the user to guess, branch on too-high / too-low / correct.
