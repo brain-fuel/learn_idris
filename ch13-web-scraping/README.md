@@ -24,4 +24,4 @@ Install via: `pack install http` (run once per machine).
 
 ## Miniproject
 
-Daily comic downloader: scrape <https://xkcd.com>, find the image URL, download it to `comic-<date>.png`. Practices HTTP, simple HTML parsing, and writing binary files.
+xkcd-snap: parse a committed snapshot of an xkcd page (`miniproject/fixtures/xkcd.html`) and pull out the comic title, the `<img src>` URL, and the `<img alt>` text. The exercises cover the live `Network.HTTP.Client.get` half; the miniproject focuses on the parsing half so the test stays offline-deterministic and doesn't depend on xkcd's live HTML.
