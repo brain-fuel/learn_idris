@@ -36,7 +36,7 @@ web-typecheck:
 
 .PHONY: web-deps
 web-deps:
-	@for d in shared content-build server client; do \
+	@for d in shared content-build server client t/shared; do \
 	  ipkg=$$(ls $$d/*.ipkg 2>/dev/null | head -n1); \
 	  [ -n "$$ipkg" ] || continue; \
 	  echo "==> pack install-deps $$ipkg"; \
@@ -53,6 +53,14 @@ web-build:
 	  (cd $$d && $(IDRIS2) --build "$$(basename $$ipkg)") || exit 1; \
 	done; \
 	echo "OK web-build"
+
+.PHONY: web-test-shared
+web-test-shared:
+	@cd t/shared && pack --no-prompt build shared-tests.ipkg >/dev/null && \
+	  ./build/exec/shared-tests
+
+.PHONY: web-test
+web-test: web-test-shared
 
 .PHONY: web-clean
 web-clean:

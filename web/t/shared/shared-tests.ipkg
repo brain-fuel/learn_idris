@@ -1,0 +1,15 @@
+package shared-tests
+version = 0.1.0
+authors = "brainfuel"
+
+depends = web-shared, hedgehog, json
+
+sourcedir = "src"
+main = Main
+executable = "shared-tests"
+modules =
+  Main,
+  Test.Gen,
+  Test.Ids,
+  Test.State,
+  Test.Protocol

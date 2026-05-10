@@ -1,7 +1,30 @@
 [pack]
 collection = "nightly-260327"
 
-# Task 2+ will reintroduce [custom.<collection>.<name>] entries declaring
-# web-shared / content-build / web-server / web-client as local packages so
-# `pack install-deps <ipkg>` resolves intra-repo deps. Stubs need no deps,
-# so the [custom.*] section is omitted for now.
+# Local sibling packages. Path is relative to this pack.toml (web/).
+# `pack install-deps <ipkg>` resolves intra-repo deps through these entries.
+
+[custom.nightly-260327.web-shared]
+type = "local"
+path = "shared"
+ipkg = "web-shared.ipkg"
+
+[custom.nightly-260327.content-build]
+type = "local"
+path = "content-build"
+ipkg = "content-build.ipkg"
+
+[custom.nightly-260327.web-server]
+type = "local"
+path = "server"
+ipkg = "web-server.ipkg"
+
+[custom.nightly-260327.web-client]
+type = "local"
+path = "client"
+ipkg = "web-client.ipkg"
+
+[custom.nightly-260327.shared-tests]
+type = "local"
+path = "t/shared"
+ipkg = "shared-tests.ipkg"
