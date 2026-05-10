@@ -1,0 +1,7 @@
+[pack]
+collection = "nightly-260327"
+
+# Task 2+ will reintroduce [custom.<collection>.<name>] entries declaring
+# web-shared / content-build / web-server / web-client as local packages so
+# `pack install-deps <ipkg>` resolves intra-repo deps. Stubs need no deps,
+# so the [custom.*] section is omitted for now.

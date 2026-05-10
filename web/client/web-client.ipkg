@@ -1,0 +1,31 @@
+package web-client
+version = 0.1.0
+authors = "brainfuel"
+
+-- Idris -> JS (browser). dom-mvc handles the MVU loop; Client.FFI.* hosts
+-- every %foreign call to the JS runtime (marked, DOMPurify, fetch, WebSocket).
+-- Real depends list (wired once stubs grow): base, dom-mvc, json, elab-util,
+-- web-shared.
+-- depends =
+
+sourcedir = "src"
+main = Main
+executable = "web-client"
+opts = "--codegen javascript"
+modules =
+  Main,
+  Client.App,
+  Client.Router,
+  Client.State,
+  Client.WSClient,
+  Client.Markdown,
+  Client.Pages.Home,
+  Client.Pages.Lesson,
+  Client.Pages.NotFound,
+  Client.Components.Nav,
+  Client.Components.LessonView,
+  Client.Components.Repl,
+  Client.Components.Layout,
+  Client.FFI.Marked,
+  Client.FFI.Fetch,
+  Client.FFI.WS

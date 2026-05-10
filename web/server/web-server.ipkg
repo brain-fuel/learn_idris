@@ -1,0 +1,28 @@
+package web-server
+version = 0.1.0
+authors = "brainfuel"
+
+-- Idris -> Chez Scheme. The Scheme host (web/scheme-host/) loads the
+-- compiled .ss output and wires sockets to the %foreign callbacks in
+-- Server.FFI.Chez.
+-- Real depends list (wired once stubs grow): base, contrib, json, elab-util,
+-- web-shared, http.
+-- depends =
+
+sourcedir = "src"
+main = Server.Main
+executable = "web-server"
+opts = "--codegen chez"
+modules =
+  Server.Main,
+  Server.Boot,
+  Server.Router,
+  Server.Http,
+  Server.Ws,
+  Server.Session,
+  Server.Storage,
+  Server.Storage.FsBackend,
+  Server.Storage.MemBackend,
+  Server.SandboxClient,
+  Server.Content,
+  Server.FFI.Chez

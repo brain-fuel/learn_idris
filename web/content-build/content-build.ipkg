@@ -1,0 +1,16 @@
+package content-build
+version = 0.1.0
+authors = "brainfuel"
+
+-- Plain IO executable. Run pre-build to scan ../ch??-*/README.md and emit
+-- shared/src/Generated/Routes.idr + web/build/assets/<slug>.md. Not linked
+-- into the server.
+-- depends =
+
+sourcedir = "src"
+main = Main
+executable = "content-build"
+modules =
+  ContentBuild.Scan,
+  ContentBuild.Emit,
+  ContentBuild.Assets

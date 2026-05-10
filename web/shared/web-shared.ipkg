@@ -1,0 +1,14 @@
+package web-shared
+version = 0.1.0
+authors = "brainfuel"
+
+-- Codegen-agnostic types shared by server (Chez) and client (JS).
+-- depends will grow to: json, elab-util once the bodies wire idris2-json deriving.
+-- depends =
+
+sourcedir = "src"
+modules =
+  Shared.Ids,
+  Shared.State,
+  Shared.Protocol,
+  Generated.Routes
