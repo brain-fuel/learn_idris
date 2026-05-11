@@ -7,10 +7,12 @@ client/build/
 # Pack
 .pack/
 
-# Node sandbox
+# Node sandbox + bridge
 node_modules/
 sandbox/node_modules/
 sandbox/package-lock.json
+bridge/node_modules/
+bridge/package-lock.json
 
 # Generated content. Routes.idr is hand-maintained as a stub until the
 # content-build executable lands (Task 4+); at that point gitignore it

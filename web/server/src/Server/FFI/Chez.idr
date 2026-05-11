@@ -2,73 +2,46 @@ module Server.FFI.Chez
 
 %default total
 
--- Opaque host-side handles. Their layouts live in Chez Scheme; Idris only
--- ever holds Ptrs to them and passes them back through these primitives.
--- The associated Scheme procedures are defined in web/scheme-host/host.ss.
-public export data Request  : Type where
-public export data Response : Type where
-public export data WsConn   : Type where
-public export data WsFrame  : Type where
-public export data WsAction : Type where
-public export data Buf      : Type where
-  -- ^ stand-in for Data.Buffer.Buffer; replaced once contrib is wired
+-- Unix-domain-socket primitives. Implementations live in
+-- web/scheme-host/uds.ss; the chez codegen splices them in via
+-- `--directive extraRuntime=...` set in web-server.ipkg.
+
+%foreign "scheme:uds-listen"
+prim__udsListen : String -> PrimIO Int
+
+%foreign "scheme:uds-accept"
+prim__udsAccept : Int -> PrimIO Int
+
+%foreign "scheme:uds-read-frame"
+prim__udsReadFrame : Int -> PrimIO String
+
+%foreign "scheme:uds-write-frame"
+prim__udsWriteFrame : Int -> String -> PrimIO ()
+
+%foreign "scheme:uds-close"
+prim__udsClose : Int -> PrimIO ()
 
 ------------------------------------------------------------------------
--- HTTP host: register handlers, then call listen.
+-- Idris-side wrappers.
 ------------------------------------------------------------------------
 
-%foreign "scheme:web-host-register-route"
-prim__registerRoute : String
-                   -> (Ptr Request -> PrimIO (Ptr Response))
-                   -> PrimIO ()
+export
+udsListen : HasIO io => String -> io Int
+udsListen path = primIO (prim__udsListen path)
 
-%foreign "scheme:web-host-register-ws"
-prim__registerWs : String
-                -> (Ptr WsFrame -> PrimIO (Ptr WsAction))
-                -> PrimIO ()
+export
+udsAccept : HasIO io => Int -> io Int
+udsAccept fd = primIO (prim__udsAccept fd)
 
-%foreign "scheme:web-host-listen"
-prim__listen : Int -> PrimIO ()
+||| Returns "" on clean EOF (peer closed the connection).
+export
+udsReadFrame : HasIO io => Int -> io String
+udsReadFrame fd = primIO (prim__udsReadFrame fd)
 
-------------------------------------------------------------------------
--- Request accessors
-------------------------------------------------------------------------
+export
+udsWriteFrame : HasIO io => Int -> String -> io ()
+udsWriteFrame fd payload = primIO (prim__udsWriteFrame fd payload)
 
-%foreign "scheme:web-host-req-method"
-prim__reqMethod : Ptr Request -> PrimIO String
-
-%foreign "scheme:web-host-req-path"
-prim__reqPath : Ptr Request -> PrimIO String
-
-%foreign "scheme:web-host-req-header"
-prim__reqHeader : Ptr Request -> String -> PrimIO String
-
-%foreign "scheme:web-host-req-body"
-prim__reqBody : Ptr Request -> PrimIO (Ptr Buf)
-
-------------------------------------------------------------------------
--- Response constructor
-------------------------------------------------------------------------
-
-%foreign "scheme:web-host-resp-make"
-prim__respMake : Int -> String -> Ptr Buf -> PrimIO (Ptr Response)
-
-------------------------------------------------------------------------
--- WebSocket I/O
-------------------------------------------------------------------------
-
-%foreign "scheme:web-host-ws-send"
-prim__wsSend : Ptr WsConn -> Ptr Buf -> PrimIO ()
-
-%foreign "scheme:web-host-ws-close"
-prim__wsClose : Ptr WsConn -> Int -> PrimIO ()
-
-------------------------------------------------------------------------
--- Misc utility primitives provided by the host
-------------------------------------------------------------------------
-
-%foreign "scheme:web-host-now-millis"
-prim__nowMillis : PrimIO Bits64
-
-%foreign "scheme:web-host-rand-bytes"
-prim__randBytes : Int -> PrimIO (Ptr Buf)
+export
+udsClose : HasIO io => Int -> io ()
+udsClose fd = primIO (prim__udsClose fd)

@@ -1,5 +1,16 @@
 module Server.Session
 
+import Shared.Ids
+
 %default total
 
--- TODO: HMAC-signed cookie sessions + in-memory live-session map.
+------------------------------------------------------------------------
+-- v1: cookie-signed sessions live in the Node bridge (Node has stdlib
+-- crypto). The Idris server only sees `SessionId` strings on the wire.
+-- This module is a thin re-export so handlers can take/return SessionId
+-- without importing Shared.Ids everywhere.
+------------------------------------------------------------------------
+
+public export
+SessionId : Type
+SessionId = Shared.Ids.SessionId

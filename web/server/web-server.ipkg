@@ -2,27 +2,28 @@ package web-server
 version = 0.1.0
 authors = "brainfuel"
 
--- Idris -> Chez Scheme. The Scheme host (web/scheme-host/) loads the
--- compiled .ss output and wires sockets to the %foreign callbacks in
--- Server.FFI.Chez.
--- Real depends list (wired once stubs grow): base, contrib, json, elab-util,
--- web-shared, http.
--- depends =
+-- Idris -> Chez Scheme. Reads framed JSON envelopes over a Unix domain
+-- socket from the Node bridge; routes Shared.Protocol.ClientMsg into
+-- handlers and writes back Shared.Protocol.ServerMsg.
+--
+-- Sockets themselves are provided by web/scheme-host/uds.ss, which is
+-- spliced into the emitted .ss heap via the --directive below. The
+-- bridge owns HTTP/WS framing + the sandbox client; Idris only sees
+-- the logical wire.
+depends = base, contrib, json, elab-util, web-shared
 
 sourcedir = "src"
 main = Server.Main
 executable = "web-server"
-opts = "--codegen chez"
+opts = "--codegen chez --directive extraRuntime=../scheme-host/uds.ss"
 modules =
   Server.Main,
   Server.Boot,
   Server.Router,
-  Server.Http,
-  Server.Ws,
+  Server.Uds,
   Server.Session,
   Server.Storage,
   Server.Storage.FsBackend,
   Server.Storage.MemBackend,
-  Server.SandboxClient,
   Server.Content,
   Server.FFI.Chez

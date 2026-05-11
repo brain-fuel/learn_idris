@@ -69,8 +69,32 @@ web-sandbox-test: web-sandbox-deps
 web-sandbox-run: web-sandbox-deps
 	@cd sandbox && node src/worker.mjs
 
+.PHONY: web-server-build web-server-run
+web-server-build:
+	@cd server && pack --no-prompt build web-server.ipkg
+
+web-server-run: web-server-build
+	@./server/build/exec/web-server
+
+.PHONY: web-bridge-deps web-bridge-test web-bridge-run
+web-bridge-deps:
+	@cd bridge && npm install --silent
+
+web-bridge-test: web-bridge-deps
+	@cd bridge && node --test test/*.spec.mjs
+
+web-bridge-run: web-bridge-deps web-build-client
+	@cd bridge && STATIC_ROOT=../client/build/serve node src/server.mjs
+
+.PHONY: web-stack-run web-stack-stop
+web-stack-run: web-build-client web-server-build web-sandbox-deps web-bridge-deps
+	@./scripts/run-dev.sh
+
+web-stack-stop:
+	@./scripts/stop-dev.sh
+
 .PHONY: web-test
-web-test: web-test-shared web-sandbox-test
+web-test: web-test-shared web-sandbox-test web-bridge-test
 
 .PHONY: web-content
 web-content:
