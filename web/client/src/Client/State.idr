@@ -48,7 +48,7 @@ record AppModel where
 public export
 initModel : AppModel
 initModel = MkModel
-  { route      = RStub
+  { route      = Ch00Hello
   , lessonBody = Nothing
   , rendered   = Nothing
   , fetchError = Nothing

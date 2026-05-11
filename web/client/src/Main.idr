@@ -15,5 +15,5 @@ main : IO ()
 main =
   runMVC update display
     (\_ => consoleLog "web-client: MVC error")
-    (NavTo RStub)
+    (NavTo Ch00Hello)
     initModel

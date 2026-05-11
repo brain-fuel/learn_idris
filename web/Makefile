@@ -62,17 +62,21 @@ web-test-shared:
 .PHONY: web-test
 web-test: web-test-shared
 
+.PHONY: web-content
+web-content:
+	@cd content-build && pack --no-prompt build content-build.ipkg
+	@mkdir -p client/build/serve/assets
+	@./content-build/build/exec/content-build \
+	  ../ \
+	  shared/src/Generated/Routes.idr \
+	  client/build/serve/assets
+
 .PHONY: web-build-client web-run-client
-web-build-client:
+web-build-client: web-content
 	@cd client && pack --no-prompt build web-client.ipkg
 	@mkdir -p client/build/serve/assets
 	@cp client/build/exec/web-client.js client/build/serve/web-client.js
 	@cp client/index.html client/style.css client/build/serve/
-	@if [ -f ../ch00-hello/README.md ]; then \
-	  cp ../ch00-hello/README.md client/build/serve/assets/stub.md; \
-	else \
-	  echo "# Stub lesson\n\nNo README.md found." > client/build/serve/assets/stub.md; \
-	fi
 	@echo "OK web-build-client (serve at client/build/serve/)"
 
 web-run-client: web-build-client

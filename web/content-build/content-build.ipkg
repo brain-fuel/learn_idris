@@ -5,7 +5,7 @@ authors = "brainfuel"
 -- Plain IO executable. Run pre-build to scan ../ch??-*/README.md and emit
 -- shared/src/Generated/Routes.idr + web/build/assets/<slug>.md. Not linked
 -- into the server.
--- depends =
+depends = base, contrib
 
 sourcedir = "src"
 main = Main
