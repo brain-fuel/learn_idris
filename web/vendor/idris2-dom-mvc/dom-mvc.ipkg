@@ -1,0 +1,36 @@
+package dom-mvc
+version    = 0.0.1
+authors    = "stefan-hoeck"
+brief      = "Single page web applications"
+
+depends    = base      >= 0.6.0
+           , dom
+           , containers
+           , json-simple
+           , refined
+           , tailrec
+           , css
+
+modules    = Text.HTML
+           , Text.HTML.Attribute
+           , Text.HTML.Event
+           , Text.HTML.Node
+           , Text.HTML.Select
+
+           , Web.MVC
+           , Web.MVC.Animate
+           , Web.MVC.Cmd
+           , Web.MVC.Event
+           , Web.MVC.Http
+           , Web.MVC.Util
+           , Web.MVC.View
+           , Web.MVC.Widget
+
+           , Web.MVC.Canvas
+           , Web.MVC.Canvas.Angle
+           , Web.MVC.Canvas.Scene
+           , Web.MVC.Canvas.Shape
+           , Web.MVC.Canvas.Style
+           , Web.MVC.Canvas.Transformation
+
+sourcedir  = "src"

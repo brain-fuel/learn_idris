@@ -28,3 +28,19 @@ ipkg = "web-client.ipkg"
 type = "local"
 path = "t/shared"
 ipkg = "shared-tests.ipkg"
+
+# Local forks. Both pinned to the upstream commit referenced by
+# nightly-260327 in pack-db, on the `local-patches` branch carrying our
+# additions to HTMLTag / Text.HTML.Node (Nav, Main, Figure, Mark, Em,
+# Strong, Code, ... — full HTML5 semantic + inline set). PR upstream
+# eventually; keep the fork until then.
+
+[custom.nightly-260327.css]
+type = "local"
+path = "vendor/idris2-css"
+ipkg = "css.ipkg"
+
+[custom.nightly-260327.dom-mvc]
+type = "local"
+path = "vendor/idris2-dom-mvc"
+ipkg = "dom-mvc.ipkg"
