@@ -59,8 +59,18 @@ web-test-shared:
 	@cd t/shared && pack --no-prompt build shared-tests.ipkg >/dev/null && \
 	  ./build/exec/shared-tests
 
+.PHONY: web-sandbox-deps web-sandbox-test web-sandbox-run
+web-sandbox-deps:
+	@cd sandbox && npm install --silent
+
+web-sandbox-test: web-sandbox-deps
+	@cd sandbox && node --test test/*.spec.mjs
+
+web-sandbox-run: web-sandbox-deps
+	@cd sandbox && node src/worker.mjs
+
 .PHONY: web-test
-web-test: web-test-shared
+web-test: web-test-shared web-sandbox-test
 
 .PHONY: web-content
 web-content:

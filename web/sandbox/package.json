@@ -1,0 +1,20 @@
+{
+  "name": "learn-idris-sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sandbox executor for the learn_idris web REPL. Wraps a long-lived idris2 --no-banner child per session under a pluggable jail backend (bwrap / firejail / nsjail / none).",
+  "license": "EPL-2.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/worker.mjs",
+    "test":  "node --test test/*.spec.mjs"
+  },
+  "dependencies": {
+    "ws":   "^8.18.0",
+    "zod":  "^3.23.8",
+    "pino": "^9.5.0"
+  }
+}
