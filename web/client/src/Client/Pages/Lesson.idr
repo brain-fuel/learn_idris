@@ -1,5 +1,11 @@
 module Client.Pages.Lesson
 
+import Client.State
+import Client.Components.Layout
+import Text.HTML
+
 %default total
 
--- TODO: render LessonView (markdown) + Repl widget for the active Route.
+export
+view : AppModel -> Node AppEvent
+view = Layout.view

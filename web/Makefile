@@ -62,6 +62,23 @@ web-test-shared:
 .PHONY: web-test
 web-test: web-test-shared
 
+.PHONY: web-build-client web-run-client
+web-build-client:
+	@cd client && pack --no-prompt build web-client.ipkg
+	@mkdir -p client/build/serve/assets
+	@cp client/build/exec/web-client.js client/build/serve/web-client.js
+	@cp client/index.html client/style.css client/build/serve/
+	@if [ -f ../ch00-hello/README.md ]; then \
+	  cp ../ch00-hello/README.md client/build/serve/assets/stub.md; \
+	else \
+	  echo "# Stub lesson\n\nNo README.md found." > client/build/serve/assets/stub.md; \
+	fi
+	@echo "OK web-build-client (serve at client/build/serve/)"
+
+web-run-client: web-build-client
+	@echo "==> http://localhost:8000/"
+	@cd client/build/serve && python3 -m http.server 8000
+
 .PHONY: web-clean
 web-clean:
 	@find . -type d -name build -exec rm -rf {} + 2>/dev/null; \

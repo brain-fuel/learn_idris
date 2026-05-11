@@ -4,13 +4,13 @@ authors = "brainfuel"
 
 -- Idris -> JS (browser). dom-mvc handles the MVU loop; Client.FFI.* hosts
 -- every %foreign call to the JS runtime (marked, DOMPurify, fetch, WebSocket).
--- Real depends list (wired once stubs grow): base, dom-mvc, json, elab-util,
--- web-shared.
--- depends =
+-- json (= idris2-json) is used directly for WS payload codec; we bypass
+-- dom-mvc's getJSON entirely so the json/json-simple split stays decoupled.
+depends = dom-mvc, json, elab-util, web-shared
 
 sourcedir = "src"
 main = Main
-executable = "web-client"
+executable = "web-client.js"
 opts = "--codegen javascript"
 modules =
   Main,
